@@ -150,10 +150,10 @@
     }
     .btn-primary:hover { background: #1ebe5a; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,211,102,.4); }
     .btn-secondary {
-      background: transparent; color: var(--white);
-      border: 1.5px solid rgba(255,255,255,.4);
+      background: transparent; color: var(--green-700);
+      border: 1.5px solid var(--green-400);
     }
-    .btn-secondary:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
+    .btn-secondary:hover { background: var(--green-100); border-color: var(--green-500); }
     .btn-outline {
       background: transparent; color: var(--green-700);
       border: 1.5px solid var(--green-300);
@@ -182,46 +182,23 @@
       height: 68px;
     }
     .navbar__logo {
-      font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em;
-      color: var(--white);
-      display: flex; align-items: center; gap: 10px;
-      transition: color var(--transition);
+      display: flex; align-items: center;
+      transition: opacity var(--transition);
     }
-    .navbar.scrolled .navbar__logo { color: var(--green-800); }
-    .navbar__logo-icon {
-      width: 34px; height: 34px;
-      background: var(--green-400);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .navbar__logo-icon svg { width: 20px; height: 20px; fill: white; }
-    .navbar__cta {
-      display: flex; gap: 12px; align-items: center;
-    }
-    .navbar__cta .btn {
-      padding: 10px 20px;
-      font-size: 0.875rem;
-    }
-    .navbar__cta .btn-wha {
-      background: #25D366; color: white;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 6px rgba(37,211,102,.3);
-    }
-    .navbar__cta .btn-wha:hover { background: #1ebe5a; }
+    .navbar__logo img { height: 40px; width: auto; display: block; }
+    .navbar__logo:hover { opacity: .85; }
     .navbar__nav {
       display: flex; gap: 32px; list-style: none;
     }
     .navbar__nav a {
       font-size: 0.875rem; font-weight: 500;
-      color: rgba(255,255,255,.85);
+      color: var(--green-800);
       transition: color var(--transition);
     }
     .navbar.scrolled .navbar__nav a { color: var(--gray-700); }
-    .navbar__nav a:hover { color: var(--white); }
-    .navbar.scrolled .navbar__nav a:hover { color: var(--green-600); }
+    .navbar__nav a:hover { color: var(--green-500); }
     @media (max-width: 768px) {
       .navbar__nav { display: none; }
-      .navbar__cta .btn-nav { display: none; }
     }
 
     /* ===================== HERO ===================== */
@@ -280,32 +257,36 @@
       position: relative; z-index: 1;
     }
     .hero__product-card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
+      background: var(--white);
+      border: 1px solid var(--green-200);
       border-radius: var(--radius-lg);
       padding: 28px;
-      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-md);
     }
     .hero__product-card--highlight {
-      background: rgba(52,157,114,.15);
-      border-color: rgba(52,157,114,.3);
+      background: var(--green-800);
+      border-color: var(--green-700);
     }
     .hero__cert-badges {
       display: flex; gap: 12px; flex-wrap: wrap;
     }
     .cert-badge {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.15);
+      background: var(--green-50);
+      border: 1px solid var(--green-200);
       border-radius: 100px;
       padding: 6px 14px;
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em;
-      color: var(--green-200);
+      color: var(--green-700);
       display: flex; align-items: center; gap: 6px;
     }
-    .cert-badge::before { content: '✓'; color: var(--green-300); }
-    .product-pill-label { font-size: 0.7rem; color: rgba(255,255,255,.5); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+    .cert-badge::before { content: '✓'; color: var(--green-500); }
+    .product-pill-label { font-size: 0.7rem; color: rgba(255,255,255,.6); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
     .product-pill-name { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .product-pill-desc { font-size: 0.85rem; color: rgba(255,255,255,.6); }
+    .product-pill-desc { font-size: 0.85rem; color: rgba(255,255,255,.7); }
+    /* On white card variant */
+    .hero__product-card:not(.hero__product-card--highlight) .product-pill-label { color: var(--gray-500); }
+    .hero__product-card:not(.hero__product-card--highlight) .product-pill-name { color: var(--gray-900); }
+    .hero__product-card:not(.hero__product-card--highlight) .product-pill-desc { color: var(--gray-600,#4B5563); }
     .hero__product-img {
       width: 100%; aspect-ratio: 4/3;
       background: linear-gradient(135deg, rgba(42,96,72,.5), rgba(52,157,114,.2));
@@ -569,14 +550,16 @@
     .product-card__features li::before { content: '✓'; color: var(--green-500); font-weight: 700; flex-shrink: 0; }
     .product-card__ctas { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn-ml {
-      background: #FFE600; color: #333;
+      background: #FFE600; color: #1a1a1a;
       border-radius: var(--radius);
       padding: 10px 18px;
       font-size: 0.85rem; font-weight: 700;
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 8px;
       transition: all var(--transition);
+      border: 2px solid #e6cf00;
     }
-    .btn-ml:hover { background: #f5dc00; transform: translateY(-1px); }
+    .btn-ml:hover { background: #f5dc00; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(255,230,0,.4); }
+    .btn-ml svg { width: 16px; height: 16px; flex-shrink: 0; }
     @media (max-width: 640px) {
       .products__grid { grid-template-columns: 1fr; }
     }
@@ -836,12 +819,7 @@
 <nav class="navbar" id="navbar" aria-label="Navegación principal">
   <div class="navbar__inner">
     <a href="#" class="navbar__logo">
-      <span class="navbar__logo-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s3.22-2.26 8-2C22 9 19 13 17 8Z"/>
-        </svg>
-      </span>
-      Biogreens
+      <img src="assets/logo.png" alt="Biogreens" />
     </a>
     <ul class="navbar__nav" aria-label="Menú">
       <li><a href="#about">¿Quiénes somos?</a></li>
@@ -1003,6 +981,14 @@
           <li>Sin efectos ecotóxicos en el suelo resultante</li>
           <li>Ausencia de metales pesados por encima de límites permitidos</li>
         </ul>
+        <div style="margin-top:20px;">
+          <button type="button" style="display:inline-flex;align-items:center;gap:10px;background:var(--gray-50);border:1.5px solid var(--gray-300);border-radius:10px;padding:10px 16px;cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--gray-700);font-family:inherit;transition:all .2s;" onmouseover="this.style.background='var(--green-50)';this.style.borderColor='var(--green-300)';" onmouseout="this.style.background='var(--gray-50)';this.style.borderColor='var(--gray-300)';">
+            <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#E53E3E;border-radius:6px;flex-shrink:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h5v1.5H8V10z"/></svg>
+            </span>
+            Descargar certificado
+          </button>
+        </div>
       </div>
 
       <div class="cert-card fade-in">
@@ -1016,6 +1002,14 @@
           <li>Reconocida internacionalmente por municipios y compradores ESG</li>
           <li>Diferenciación clara frente a plásticos oxodegradables</li>
         </ul>
+        <div style="margin-top:20px;">
+          <button type="button" style="display:inline-flex;align-items:center;gap:10px;background:var(--gray-50);border:1.5px solid var(--gray-300);border-radius:10px;padding:10px 16px;cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--gray-700);font-family:inherit;transition:all .2s;" onmouseover="this.style.background='var(--green-50)';this.style.borderColor='var(--green-300)';" onmouseout="this.style.background='var(--gray-50)';this.style.borderColor='var(--gray-300)';">
+            <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#E53E3E;border-radius:6px;flex-shrink:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h5v1.5H8V10z"/></svg>
+            </span>
+            Descargar certificado
+          </button>
+        </div>
       </div>
     </div>
 
@@ -1155,7 +1149,8 @@
           </ul>
           <div class="product-card__ctas">
             <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noopener" class="btn-ml">
-              <span>🛒</span> Mercado Libre
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Mercado Libre
             </a>
           </div>
         </div>
@@ -1186,7 +1181,8 @@
           </ul>
           <div class="product-card__ctas">
             <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noopener" class="btn-ml">
-              <span>🛒</span> Mercado Libre
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Mercado Libre
             </a>
           </div>
         </div>
@@ -1378,7 +1374,7 @@
 
           <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noopener" class="contact__cta-item">
             <div class="contact__cta-icon contact__cta-icon--ml" style="align-items:center;justify-content:center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#333"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15H11v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#333"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3.01 6H21M16 10a4 4 0 0 1-8 0" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
             </div>
             <div class="contact__cta-text">
               <div class="contact__cta-label">Mercado Libre</div>
@@ -1429,11 +1425,8 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand-name">
-          <span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s3.22-2.26 8-2C22 9 19 13 17 8Z"/></svg>
-          </span>
-          Biogreens
+        <div class="footer__brand-logo" style="margin-bottom:14px;">
+          <img src="assets/logo.png" alt="Biogreens" style="height:44px;width:auto;filter:brightness(0) invert(1);" />
         </div>
         <p class="footer__tagline">Transición simple hacia menos plástico en tu negocio. Bolsas compostables certificadas, importadas y comercializadas desde Bahía Blanca, Argentina.</p>
         <div class="footer__certs">
