@@ -89,8 +89,8 @@
       --green-300: #52B788;
       --green-200: #95D5B2;
       --green-100: #D8F3DC;
-      --green-50:  #F0FAF4;
-      --green-hero: #EAF6EF;
+      --green-50:  #F5EACB;
+      --green-hero: #F5EACB;
       --header-bg: #FFFFFF;
       --white:     #FFFFFF;
       --gray-900:  #0F1A14;
@@ -312,7 +312,7 @@
     }
 
     /* ===================== WHO WE ARE ===================== */
-    #about { background: var(--white); }
+    #about { background: var(--green-hero); }
     .about__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -926,7 +926,6 @@
         <p style="margin-top:16px;">No vendemos marketing verde. Vendemos un producto certificado, con normas internacionales verificables, que reemplaza el plástico de un solo uso de manera real y operativa.</p>
         <p style="margin-top:16px;">Nuestra propuesta es simple: reducción de impacto ambiental sin perder practicidad ni calidad.</p>
         <div class="about__pills">
-          <span class="about__pill">Importación directa</span>
           <span class="about__pill">Certificación verificable</span>
           <span class="about__pill">Comercio B2B</span>
           <span class="about__pill">Envíos a todo el país</span>
@@ -949,12 +948,12 @@
     <div class="cert-cards">
       <div class="cert-card fade-in">
         <div class="cert-card__head">
-          <svg class="cert-seal" viewBox="0 0 100 100" role="img" aria-label="Sello compostable EN 13432">
-            <circle cx="50" cy="50" r="47" fill="#fff" stroke="#2EA86A" stroke-width="3"/>
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#2EA86A" stroke-width="1" opacity=".4"/>
-            <path d="M50 64c-9-4-15-11-15-20 0-3 .6-6 1.7-8.6C42 38 47 43 50 50c3-7 8-12 13.3-14.6C64.4 38 65 41 65 44c0 9-6 16-15 20z" fill="#2EA86A"/>
-            <path d="M50 64V44" stroke="#1F7A4D" stroke-width="2" stroke-linecap="round"/>
-            <text x="50" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#2EA86A" letter-spacing="0.5">COMPOSTABLE</text>
+          <svg class="cert-seal" viewBox="0 0 100 100" role="img" aria-label="Certificación CEN (Comité Europeo de Normalización) EN 13432">
+            <defs><linearGradient id="cenGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1B5E20;stop-opacity:1" /><stop offset="100%" style="stop-color:#2EA86A;stop-opacity:1" /></linearGradient></defs>
+            <rect x="8" y="8" width="84" height="84" rx="6" fill="url(#cenGrad)"/>
+            <circle cx="50" cy="32" r="14" fill="white" opacity=".9"/>
+            <text x="50" y="37" text-anchor="middle" font-family="Manrope,sans-serif" font-size="18" font-weight="800" fill="#1B5E20">CEN</text>
+            <text x="50" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="white" letter-spacing="0.8">EN 13432</text>
           </svg>
           <div class="cert-card__headtext">
             <div class="cert-card__code">Norma Europea</div>
@@ -977,12 +976,12 @@
 
       <div class="cert-card fade-in">
         <div class="cert-card__head">
-          <svg class="cert-seal" viewBox="0 0 100 100" role="img" aria-label="Sello compostable ASTM D6400">
-            <circle cx="50" cy="50" r="47" fill="#fff" stroke="#2A6048" stroke-width="3"/>
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#2A6048" stroke-width="1" opacity=".4"/>
-            <path d="M50 64c-9-4-15-11-15-20 0-3 .6-6 1.7-8.6C42 38 47 43 50 50c3-7 8-12 13.3-14.6C64.4 38 65 41 65 44c0 9-6 16-15 20z" fill="#2A6048"/>
-            <path d="M50 64V44" stroke="#143626" stroke-width="2" stroke-linecap="round"/>
-            <text x="50" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#2A6048" letter-spacing="0.5">COMPOSTABLE</text>
+          <svg class="cert-seal" viewBox="0 0 100 100" role="img" aria-label="Certificación ASTM International D6400">
+            <defs><linearGradient id="astmGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a472a;stop-opacity:1" /><stop offset="100%" style="stop-color:#2a6048;stop-opacity:1" /></linearGradient></defs>
+            <polygon points="50,10 90,35 90,65 50,90 10,65 10,35" fill="url(#astmGrad)"/>
+            <circle cx="50" cy="50" r="20" fill="white" opacity=".95"/>
+            <text x="50" y="48" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" fill="#1a472a">ASTM</text>
+            <text x="50" y="65" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#1a472a">D6400</text>
           </svg>
           <div class="cert-card__headtext">
             <div class="cert-card__code">Norma Americana</div>
@@ -1419,8 +1418,8 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand-logo" style="margin-bottom:14px;">
-          <img src="assets/logo.webp" alt="Biogreens" style="height:48px;width:auto;filter:brightness(0) invert(1);" />
+        <div class="footer__brand-logo" style="margin-bottom:20px;padding:14px 0;">
+          <img src="assets/logo.webp" alt="Biogreens" style="height:68px;width:auto;opacity:.95;" />
         </div>
         <p class="footer__tagline">Transición simple hacia menos plástico en tu negocio. Bolsas compostables certificadas, importadas y comercializadas desde Bahía Blanca, Argentina.</p>
         <div class="footer__certs">
