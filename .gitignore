@@ -1,1 +1,5 @@
 .vercel
+node_modules
+_cand
+package.json
+package-lock.json

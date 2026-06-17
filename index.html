@@ -10,14 +10,19 @@
   <meta property="og:title" content="Biogreens — Bolsas Compostables Certificadas" />
   <meta property="og:description" content="Bolsas compostables certificadas para reemplazar el plástico de un solo uso. Soluciones para empresas, comercios y distribuidores." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://biogreens.com.ar" />
-  <meta property="og:image" content="https://biogreens.com.ar/og-image.jpg" />
+  <meta property="og:url" content="https://biogreens.ar" />
+  <meta property="og:image" content="https://biogreens.ar/assets/uso-verduleria.webp" />
   <meta property="og:locale" content="es_AR" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Biogreens — Bolsas Compostables Certificadas" />
   <meta name="twitter:description" content="Alternativa real al plástico de un solo uso. Certificación internacional EN 13432 y ASTM D6400." />
-  <link rel="canonical" href="https://biogreens.com.ar" />
+  <link rel="canonical" href="https://biogreens.ar" />
   <title>Biogreens | Bolsas Compostables Certificadas — Argentina</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
 
   <!-- Schema.org Organization -->
   <script type="application/ld+json">
@@ -26,7 +31,7 @@
     "@type": "Organization",
     "name": "Biogreens",
     "description": "Empresa argentina importadora y distribuidora de bolsas compostables certificadas",
-    "url": "https://biogreens.com.ar",
+    "url": "https://biogreens.ar",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Bahía Blanca",
@@ -85,15 +90,18 @@
       --green-200: #95D5B2;
       --green-100: #D8F3DC;
       --green-50:  #F0FAF4;
-      --green-hero: #EBF8F3;
+      --green-hero: #EAF6EF;
+      --header-bg: #FFFFFF;
       --white:     #FFFFFF;
       --gray-900:  #0F1A14;
-      --gray-700:  #374151;
+      --gray-700:  #3A4A42;
+      --gray-600:  #4B5563;
       --gray-500:  #6B7280;
-      --gray-300:  #D1D5DB;
+      --gray-300:  #D9E0DC;
       --gray-100:  #F3F4F6;
-      --gray-50:   #F9FAFB;
+      --gray-50:   #F7FAF8;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-head: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --radius:    8px;
       --radius-lg: 16px;
       --shadow:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
@@ -118,21 +126,22 @@
 
     /* ===================== TYPOGRAPHY ===================== */
     .eyebrow {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--green-400);
+      color: var(--green-500);
     }
-    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
-    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
-    h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+    h1, h2, h3 { font-family: var(--font-head); }
+    h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; }
+    h3 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
     p  { color: var(--gray-700); }
 
     /* ===================== LAYOUT ===================== */
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 96px 0; }
-    .section-header { max-width: 640px; margin-bottom: 56px; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 112px 0; }
+    .section-header { max-width: 680px; margin-bottom: 64px; }
     .section-header--center { text-align: center; margin-left: auto; margin-right: auto; }
 
     /* ===================== BUTTONS ===================== */
@@ -169,24 +178,62 @@
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 0 24px;
-      transition: background var(--transition), box-shadow var(--transition);
+      background: var(--header-bg);
+      border-bottom: 1px solid rgba(15,26,20,.06);
+      transition: box-shadow var(--transition);
     }
     .navbar.scrolled {
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(0,0,0,.08);
+      box-shadow: 0 4px 20px rgba(15,26,20,.06);
     }
     .navbar__inner {
-      max-width: 1140px; margin: 0 auto;
+      max-width: 1180px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      height: 68px;
+      height: 82px;
     }
     .navbar__logo {
       display: flex; align-items: center;
       transition: opacity var(--transition);
     }
-    .navbar__logo img { height: 40px; width: auto; display: block; }
+    .navbar__logo img { height: 54px; width: auto; display: block; }
     .navbar__logo:hover { opacity: .85; }
+    /* Hamburger */
+    .navbar__burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; cursor: pointer;
+      border-radius: 10px; transition: background var(--transition);
+    }
+    .navbar__burger:hover { background: var(--green-50); }
+    .navbar__burger span {
+      display: block; width: 24px; height: 2.5px; margin: 0 auto;
+      background: var(--green-800); border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .navbar__burger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .navbar__burger.open span:nth-child(2) { opacity: 0; }
+    .navbar__burger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    /* Mobile menu panel */
+    .mobile-menu {
+      position: fixed; inset: 82px 0 auto 0; z-index: 99;
+      background: var(--white);
+      border-bottom: 1px solid rgba(15,26,20,.08);
+      box-shadow: 0 12px 28px rgba(15,26,20,.1);
+      transform: translateY(-12px); opacity: 0; pointer-events: none;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .mobile-menu ul { list-style: none; padding: 8px 24px 20px; }
+    .mobile-menu a {
+      display: block; padding: 16px 4px;
+      font-size: 1.05rem; font-weight: 600; color: var(--green-800);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .mm-cta {
+      margin-top: 14px; background: #25D366; color: #fff;
+      border-radius: 10px; text-align: center; border: none;
+      padding: 15px; font-weight: 700;
+    }
     .navbar__nav {
       display: flex; gap: 32px; list-style: none;
     }
@@ -197,19 +244,20 @@
     }
     .navbar.scrolled .navbar__nav a { color: var(--gray-700); }
     .navbar__nav a:hover { color: var(--green-500); }
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
       .navbar__nav { display: none; }
+      .navbar__burger { display: flex; }
     }
 
     /* ===================== HERO ===================== */
     #hero {
-      min-height: 100vh;
+      min-height: 92vh;
       background: var(--green-hero);
       background-image:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(52,157,114,.15) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(42,96,72,.15) 0%, transparent 70%);
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(82,183,136,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 80% 100%, rgba(42,96,72,.12) 0%, transparent 70%);
       display: flex; align-items: center;
-      padding-top: 68px;
+      padding-top: 122px; padding-bottom: 72px;
       position: relative; overflow: hidden;
     }
     #hero::before {
@@ -219,118 +267,48 @@
       opacity: .4;
     }
     .hero__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
       position: relative; z-index: 1;
+      max-width: 880px; margin: 0 auto;
+      text-align: center;
     }
     .hero__content { color: var(--gray-900); }
     .hero__eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(52,157,114,.15);
-      border: 1px solid rgba(52,157,114,.25);
-      padding: 6px 14px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(42,96,72,.18);
+      padding: 7px 16px;
       border-radius: 100px;
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--green-600);
-      margin-bottom: 24px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green-700);
+      margin-bottom: 28px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
     }
-    .hero__eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--green-300); display: inline-block; }
-    .hero__title { margin-bottom: 20px; color: var(--gray-900); }
+    .hero__eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--green-400); display: inline-block; }
+    .hero__title { margin-bottom: 22px; color: var(--gray-900); max-width: 900px; margin-left: auto; margin-right: auto; }
     .hero__title em { font-style: normal; color: var(--green-500); }
     .hero__subtitle {
-      font-size: 1.1rem; color: var(--gray-700);
-      margin-bottom: 36px; max-width: 460px;
+      font-size: 1.15rem; color: var(--gray-700);
+      margin: 0 auto 40px; max-width: 600px;
     }
-    .hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+    .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 56px; }
     .hero__trust {
-      display: flex; flex-direction: column; gap: 10px;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 14px 28px;
+      max-width: 760px; margin: 0 auto;
+      padding-top: 36px; border-top: 1px solid rgba(42,96,72,.14);
     }
     .hero__trust-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 0.875rem; color: var(--gray-700);
+      display: flex; align-items: center; gap: 9px;
+      font-size: 0.9rem; font-weight: 500; color: var(--gray-700);
     }
-    .hero__trust-item svg { color: var(--green-300); flex-shrink: 0; }
+    .hero__trust-item svg { color: var(--green-500); flex-shrink: 0; }
     .hero__visual {
       display: flex; flex-direction: column; gap: 20px;
       position: relative; z-index: 1;
     }
-    .hero__product-card {
-      background: var(--white);
-      border: 1px solid var(--green-200);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      box-shadow: var(--shadow-md);
-    }
-    .hero__product-card--highlight {
-      background: var(--green-800);
-      border-color: var(--green-700);
-    }
-    .hero__cert-badges {
-      display: flex; gap: 12px; flex-wrap: wrap;
-    }
-    .cert-badge {
-      background: var(--green-50);
-      border: 1px solid var(--green-200);
-      border-radius: 100px;
-      padding: 6px 14px;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em;
-      color: var(--green-700);
-      display: flex; align-items: center; gap: 6px;
-    }
-    .cert-badge::before { content: '✓'; color: var(--green-500); }
-    .product-pill-label { font-size: 0.7rem; color: rgba(255,255,255,.6); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
-    .product-pill-name { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .product-pill-desc { font-size: 0.85rem; color: rgba(255,255,255,.7); }
-    /* On white card variant */
-    .hero__product-card:not(.hero__product-card--highlight) .product-pill-label { color: var(--gray-500); }
-    .hero__product-card:not(.hero__product-card--highlight) .product-pill-name { color: var(--gray-900); }
-    .hero__product-card:not(.hero__product-card--highlight) .product-pill-desc { color: var(--gray-600,#4B5563); }
-    .hero__product-img {
-      width: 100%; aspect-ratio: 4/3;
-      background: linear-gradient(135deg, rgba(42,96,72,.5), rgba(52,157,114,.2));
-      border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px;
-    }
-    .hero__product-img svg { opacity: .5; }
-    @media (max-width: 900px) {
-      .hero__grid { grid-template-columns: 1fr; gap: 48px; }
-      .hero__visual { display: none; }
-    }
-
-    /* ===================== IMPACT COUNTER ===================== */
-    #impact {
-      background: var(--green-900);
-      padding: 72px 0;
-    }
-    .impact__inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,.08);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .impact__stat {
-      background: var(--green-900);
-      padding: 48px 40px;
-      text-align: center;
-    }
-    .impact__number {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800; letter-spacing: -0.04em;
-      color: var(--white); line-height: 1;
-      margin-bottom: 8px;
-    }
-    .impact__number em { color: var(--green-300); font-style: normal; }
-    .impact__label {
-      font-size: 0.9rem; color: rgba(255,255,255,.55);
-      font-weight: 500;
-    }
-    @media (max-width: 640px) {
-      .impact__inner { grid-template-columns: 1fr; }
+    @media (max-width: 600px) {
+      #hero { padding-top: 108px; min-height: 0; }
+      .hero__trust { gap: 12px 20px; }
     }
 
     /* ===================== WHO WE ARE ===================== */
@@ -341,25 +319,29 @@
       gap: 80px;
       align-items: center;
     }
-    .about__visual {
+    .about__chart {
       background: var(--green-50);
-      border-radius: var(--radius-lg);
-      aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
       border: 1px solid var(--green-100);
-      position: relative; overflow: hidden;
+      border-radius: var(--radius-lg);
+      padding: 36px 34px;
     }
-    .about__visual-inner {
-      display: flex; flex-direction: column; align-items: center; gap: 16px;
-      padding: 32px;
+    .about__chart-title {
+      font-family: var(--font-head);
+      font-size: 1.1rem; font-weight: 700; color: var(--gray-900);
+      line-height: 1.35; margin-bottom: 24px;
     }
-    .about__visual-badge {
-      background: var(--green-800);
-      color: var(--white);
-      border-radius: var(--radius);
-      padding: 12px 20px;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
-      text-align: center;
+    .about__chart-row {
+      display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+    }
+    .about__donut { width: 168px; height: 168px; flex-shrink: 0; }
+    .about__legend { list-style: none; flex: 1; min-width: 180px; display: flex; flex-direction: column; gap: 11px; }
+    .about__legend li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--gray-700); }
+    .about__legend span { width: 13px; height: 13px; border-radius: 4px; flex-shrink: 0; }
+    .about__legend strong { color: var(--gray-900); min-width: 42px; }
+    .about__chart-foot {
+      margin-top: 26px; padding-top: 20px;
+      border-top: 1px solid var(--green-100);
+      font-size: 0.95rem; font-weight: 600; color: var(--green-700);
     }
     .about__text p + p { margin-top: 16px; }
     .about__pills {
@@ -376,7 +358,6 @@
     }
     @media (max-width: 768px) {
       .about__grid { grid-template-columns: 1fr; gap: 40px; }
-      .about__visual { display: none; }
     }
 
     /* ===================== CERTIFICATIONS ===================== */
@@ -395,22 +376,37 @@
       transition: box-shadow var(--transition);
     }
     .cert-card:hover { box-shadow: var(--shadow-lg); }
-    .cert-card__logo {
-      width: 64px; height: 64px;
-      background: var(--green-800);
-      border-radius: var(--radius);
+    .cert-card__head {
+      display: flex; align-items: center; gap: 18px;
+      padding-bottom: 22px; margin-bottom: 22px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .cert-seal { width: 76px; height: 76px; flex-shrink: 0; }
+    .cert-card__headtext { flex: 1; }
+    .cert-card__code {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--green-600); text-transform: uppercase; margin-bottom: 4px;
+    }
+    .cert-card__norm {
+      font-family: var(--font-head);
+      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em;
+      color: var(--gray-900); line-height: 1;
+    }
+    .cert-dl {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white); border: 1.5px solid var(--gray-300);
+      border-radius: 10px; padding: 9px 14px; cursor: pointer;
+      font-size: 0.8rem; font-weight: 600; color: var(--gray-700);
+      font-family: inherit; transition: all var(--transition); text-decoration: none;
+      white-space: nowrap;
+    }
+    .cert-dl:hover { background: var(--green-50); border-color: var(--green-300); color: var(--green-700); }
+    .cert-dl__ic {
       display: flex; align-items: center; justify-content: center;
-      color: var(--white);
-      font-size: 0.75rem; font-weight: 800; letter-spacing: 0.04em;
-      text-align: center; line-height: 1.2;
-      margin-bottom: 20px;
+      width: 26px; height: 26px; background: #E5484D; border-radius: 6px; flex-shrink: 0;
     }
     .cert-card__name {
-      font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;
-    }
-    .cert-card__code {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
-      color: var(--green-600); text-transform: uppercase; margin-bottom: 12px;
+      font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;
     }
     .cert-card__desc { font-size: 0.9rem; color: var(--gray-700); margin-bottom: 16px; }
     .cert-card__items {
@@ -456,16 +452,15 @@
     .material-card {
       border: 1px solid var(--gray-300);
       border-radius: var(--radius-lg);
-      padding: 28px;
+      overflow: hidden;
+      background: var(--white);
+      transition: box-shadow var(--transition), transform var(--transition);
     }
-    .material-card__icon {
-      width: 48px; height: 48px;
-      background: var(--green-100);
-      border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px;
-      font-size: 1.5rem;
+    .material-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .material-card__img {
+      width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;
     }
+    .material-card__body { padding: 24px 26px 28px; }
     .material-card h3 { margin-bottom: 8px; }
     .material-card p { font-size: 0.9rem; }
     .comparison-table {
@@ -548,7 +543,16 @@
       display: flex; align-items: flex-start; gap: 8px;
     }
     .product-card__features li::before { content: '✓'; color: var(--green-500); font-weight: 700; flex-shrink: 0; }
+    .product-card__price {
+      font-family: var(--font-head);
+      font-size: 1.5rem; font-weight: 800; color: var(--gray-900);
+      letter-spacing: -0.02em; margin-bottom: 18px;
+      display: flex; align-items: baseline; gap: 7px;
+    }
+    .product-card__price span { font-size: 0.8rem; font-weight: 600; color: var(--gray-500); letter-spacing: 0; }
+    .product-card__price small { font-size: 0.85rem; font-weight: 500; color: var(--gray-500); }
     .product-card__ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+    .product-card__ctas .btn-primary { flex: 1; justify-content: center; min-width: 180px; }
     .btn-ml {
       background: #FFE600; color: #1a1a1a;
       border-radius: var(--radius);
@@ -576,19 +580,16 @@
       overflow: hidden;
       border: 1px solid var(--gray-300);
     }
+    .proof-card { background: var(--white); transition: box-shadow var(--transition), transform var(--transition); }
+    .proof-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
     .proof-card__img {
-      width: 100%; aspect-ratio: 1;
-      background: linear-gradient(135deg, var(--green-100), var(--green-200));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3rem;
+      width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
     }
-    .proof-card__body { padding: 20px; }
-    .proof-card__body h3 { font-size: 0.95rem; margin-bottom: 4px; }
-    .proof-card__body p { font-size: 0.85rem; }
+    .proof-card__body { padding: 22px 24px; }
+    .proof-card__body h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .proof-card__body p { font-size: 0.88rem; }
     @media (max-width: 768px) {
       .proof__grid { grid-template-columns: 1fr; }
-      .proof-card { display: grid; grid-template-columns: 120px 1fr; }
-      .proof-card__img { aspect-ratio: 1; }
     }
 
     /* ===================== FAQ ===================== */
@@ -818,8 +819,8 @@
 <!-- ========== NAVBAR ========== -->
 <nav class="navbar" id="navbar" aria-label="Navegación principal">
   <div class="navbar__inner">
-    <a href="#" class="navbar__logo">
-      <img src="assets/logo.png" alt="Biogreens" />
+    <a href="#" class="navbar__logo" aria-label="Biogreens — inicio">
+      <img src="assets/logo.webp" alt="Biogreens" width="180" height="54" />
     </a>
     <ul class="navbar__nav" aria-label="Menú">
       <li><a href="#about">¿Quiénes somos?</a></li>
@@ -828,8 +829,23 @@
       <li><a href="#faq">Preguntas frecuentes</a></li>
       <li><a href="#contact">Contacto</a></li>
     </ul>
+    <button class="navbar__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- ========== MOBILE MENU ========== -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about">¿Quiénes somos?</a></li>
+    <li><a href="#products">Productos</a></li>
+    <li><a href="#certs">Certificaciones</a></li>
+    <li><a href="#faq">Preguntas frecuentes</a></li>
+    <li><a href="#contact">Contacto</a></li>
+    <li><a href="https://wa.me/542914620008?text=Hola%2C+quiero+informaci%C3%B3n+sobre+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="mm-cta">Consultar por WhatsApp</a></li>
+  </ul>
+</div>
 
 <!-- ========== HERO ========== -->
 <section id="hero" aria-label="Inicio">
@@ -847,7 +863,7 @@
           Soluciones sustentables para empresas, comercios y distribuidores que buscan una alternativa real al plástico de un solo uso.
         </p>
         <div class="hero__ctas">
-          <a href="https://wa.me/5492915550000?text=Hola%2C+quiero+informaci%C3%B3n+sobre+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="https://wa.me/542914620008?text=Hola%2C+quiero+informaci%C3%B3n+sobre+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
             Consultar por WhatsApp
           </a>
@@ -874,55 +890,6 @@
           </div>
         </div>
       </div>
-
-      <div class="hero__visual" aria-hidden="true">
-        <div class="hero__product-card hero__product-card--highlight">
-          <div class="hero__product-img">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="10" width="40" height="60" rx="4" fill="none" stroke="white" stroke-width="2"/>
-              <path d="M30 10 C30 10 28 6 40 6 C52 6 50 10 50 10" stroke="white" stroke-width="2" fill="none"/>
-              <circle cx="40" cy="36" r="12" stroke="#52B788" stroke-width="2" fill="none"/>
-              <path d="M34 36 L38 40 L46 32" stroke="#52B788" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="product-pill-label">Producto principal</div>
-          <div class="product-pill-name">Bolsa Frutas y Verduras</div>
-          <div class="product-pill-desc">30×40 cm · 250 unidades · Certificada</div>
-        </div>
-
-        <div class="hero__product-card">
-          <div class="hero__cert-badges">
-            <span class="cert-badge">EN 13432</span>
-            <span class="cert-badge">ASTM D6400</span>
-            <span class="cert-badge">Compostable</span>
-          </div>
-          <div style="margin-top:16px">
-            <div class="product-pill-label">También disponible</div>
-            <div class="product-pill-name">Bolsa Camiseta Compostable</div>
-            <div class="product-pill-desc">40×50 cm · 100 unidades · Ideal retail</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== IMPACT COUNTER ========== -->
-<section id="impact" aria-label="Impacto ambiental">
-  <div class="container">
-    <div class="impact__inner">
-      <div class="impact__stat fade-in">
-        <div class="impact__number"><em id="counter-bags">0</em><span style="color:var(--green-300)">K</span></div>
-        <div class="impact__label">Bolsas plásticas evitadas</div>
-      </div>
-      <div class="impact__stat fade-in">
-        <div class="impact__number"><em id="counter-clients">0</em></div>
-        <div class="impact__label">Comercios que ya confían</div>
-      </div>
-      <div class="impact__stat fade-in">
-        <div class="impact__number"><em id="counter-days">90</em>–<em>180</em></div>
-        <div class="impact__label">Días para compostar (vs. 400 años del plástico)</div>
-      </div>
     </div>
   </div>
 </section>
@@ -931,16 +898,26 @@
 <section id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about__grid">
-      <div class="about__visual" aria-hidden="true">
-        <div class="about__visual-inner">
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="48" stroke="var(--green-200)" stroke-width="2"/>
-            <path d="M50 20 C50 20 30 35 30 55 C30 70 39 78 50 80 C61 78 70 70 70 55 C70 35 50 20 50 20Z" fill="var(--green-300)" opacity=".4"/>
-            <path d="M50 30 C50 30 36 42 36 57 C36 67 42 74 50 76" stroke="var(--green-600)" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <div class="about__chart">
+        <p class="about__chart-title">11 millones de toneladas de plástico se producen al año en Argentina</p>
+        <div class="about__chart-row">
+          <svg class="about__donut" viewBox="0 0 200 200" role="img" aria-label="Solo el 0,2% del plástico en Argentina es compostable">
+            <g transform="rotate(-90 100 100)">
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#E8804B" stroke-width="28" stroke-dasharray="373.85 439.82"/>
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#2EA86A" stroke-width="28" stroke-dasharray="65.97 439.82" stroke-dashoffset="-373.85"/>
+            </g>
+            <text x="100" y="94" text-anchor="middle" font-family="Manrope, sans-serif" font-size="30" font-weight="800" fill="#0F1A14">0,2%</text>
+            <text x="100" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6B7280">compostable</text>
           </svg>
-          <div class="about__visual-badge">Bahía Blanca, Argentina</div>
-          <div class="about__visual-badge" style="background:var(--green-600);font-size:.7rem;">Importación directa · Calidad industrial</div>
+          <ul class="about__legend">
+            <li><span style="background:#E8804B"></span><strong>85%</strong> No se recicla</li>
+            <li><span style="background:#2EA86A"></span><strong>15%</strong> Se recicla</li>
+            <li><span style="background:#4A90D9"></span><strong>9%</strong> Oxo-degradable</li>
+            <li><span style="background:#E2574C"></span><strong>1%</strong> Biodegradable</li>
+            <li><span style="background:#8BC34A"></span><strong>0,2%</strong> Compostable</li>
+          </ul>
         </div>
+        <p class="about__chart-foot">Biogreens existe para hacer crecer ese último 0,2%.</p>
       </div>
       <div class="about__text">
         <p class="eyebrow" style="margin-bottom:12px;">Quiénes somos</p>
@@ -971,9 +948,24 @@
 
     <div class="cert-cards">
       <div class="cert-card fade-in">
-        <div class="cert-card__logo">EN<br>13432</div>
-        <div class="cert-card__code">Norma Europea</div>
-        <div class="cert-card__name">Compostabilidad Certificada Europa</div>
+        <div class="cert-card__head">
+          <svg class="cert-seal" viewBox="0 0 100 100" role="img" aria-label="Sello compostable EN 13432">
+            <circle cx="50" cy="50" r="47" fill="#fff" stroke="#2EA86A" stroke-width="3"/>
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#2EA86A" stroke-width="1" opacity=".4"/>
+            <path d="M50 64c-9-4-15-11-15-20 0-3 .6-6 1.7-8.6C42 38 47 43 50 50c3-7 8-12 13.3-14.6C64.4 38 65 41 65 44c0 9-6 16-15 20z" fill="#2EA86A"/>
+            <path d="M50 64V44" stroke="#1F7A4D" stroke-width="2" stroke-linecap="round"/>
+            <text x="50" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#2EA86A" letter-spacing="0.5">COMPOSTABLE</text>
+          </svg>
+          <div class="cert-card__headtext">
+            <div class="cert-card__code">Norma Europea</div>
+            <div class="cert-card__norm">EN 13432</div>
+          </div>
+        </div>
+        <a class="cert-dl" href="#" aria-label="Descargar certificado EN 13432 (PDF)">
+          <span class="cert-dl__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h5v1.5H8V10z"/></svg></span>
+          Descargar certificado
+        </a>
+        <div class="cert-card__name" style="margin-top:22px;">Compostabilidad certificada — Europa</div>
         <p class="cert-card__desc">La norma europea más rigurosa para materiales compostables. Define parámetros exactos de biodegradación, desintegración, ecotoxicidad y calidad del compost resultante.</p>
         <ul class="cert-card__items">
           <li>Biodegradación ≥90% en 6 meses bajo condiciones de compostaje</li>
@@ -981,35 +973,34 @@
           <li>Sin efectos ecotóxicos en el suelo resultante</li>
           <li>Ausencia de metales pesados por encima de límites permitidos</li>
         </ul>
-        <div style="margin-top:20px;">
-          <button type="button" style="display:inline-flex;align-items:center;gap:10px;background:var(--gray-50);border:1.5px solid var(--gray-300);border-radius:10px;padding:10px 16px;cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--gray-700);font-family:inherit;transition:all .2s;" onmouseover="this.style.background='var(--green-50)';this.style.borderColor='var(--green-300)';" onmouseout="this.style.background='var(--gray-50)';this.style.borderColor='var(--gray-300)';">
-            <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#E53E3E;border-radius:6px;flex-shrink:0;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h5v1.5H8V10z"/></svg>
-            </span>
-            Descargar certificado
-          </button>
-        </div>
       </div>
 
       <div class="cert-card fade-in">
-        <div class="cert-card__logo">ASTM<br>D6400</div>
-        <div class="cert-card__code">Norma Americana</div>
-        <div class="cert-card__name">Compostabilidad Certificada USA</div>
-        <p class="cert-card__desc">Estándar americano equivalente a EN 13432. Acepta el Compostable Products Institute (BPI) y es requisito para etiquetar un producto como "compostable" en mercados anglosajones.</p>
+        <div class="cert-card__head">
+          <svg class="cert-seal" viewBox="0 0 100 100" role="img" aria-label="Sello compostable ASTM D6400">
+            <circle cx="50" cy="50" r="47" fill="#fff" stroke="#2A6048" stroke-width="3"/>
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#2A6048" stroke-width="1" opacity=".4"/>
+            <path d="M50 64c-9-4-15-11-15-20 0-3 .6-6 1.7-8.6C42 38 47 43 50 50c3-7 8-12 13.3-14.6C64.4 38 65 41 65 44c0 9-6 16-15 20z" fill="#2A6048"/>
+            <path d="M50 64V44" stroke="#143626" stroke-width="2" stroke-linecap="round"/>
+            <text x="50" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#2A6048" letter-spacing="0.5">COMPOSTABLE</text>
+          </svg>
+          <div class="cert-card__headtext">
+            <div class="cert-card__code">Norma Americana</div>
+            <div class="cert-card__norm">ASTM D6400</div>
+          </div>
+        </div>
+        <a class="cert-dl" href="#" aria-label="Descargar certificado ASTM D6400 (PDF)">
+          <span class="cert-dl__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h5v1.5H8V10z"/></svg></span>
+          Descargar certificado
+        </a>
+        <div class="cert-card__name" style="margin-top:22px;">Compostabilidad certificada — USA</div>
+        <p class="cert-card__desc">Estándar americano equivalente a EN 13432. Avalado por el Compostable Products Institute (BPI) y requisito para etiquetar un producto como "compostable" en mercados anglosajones.</p>
         <ul class="cert-card__items">
           <li>Biodegradación completa en plazos específicos verificados</li>
           <li>Protocolo de compostaje industrial con temperatura controlada</li>
           <li>Reconocida internacionalmente por municipios y compradores ESG</li>
           <li>Diferenciación clara frente a plásticos oxodegradables</li>
         </ul>
-        <div style="margin-top:20px;">
-          <button type="button" style="display:inline-flex;align-items:center;gap:10px;background:var(--gray-50);border:1.5px solid var(--gray-300);border-radius:10px;padding:10px 16px;cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--gray-700);font-family:inherit;transition:all .2s;" onmouseover="this.style.background='var(--green-50)';this.style.borderColor='var(--green-300)';" onmouseout="this.style.background='var(--gray-50)';this.style.borderColor='var(--gray-300)';">
-            <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#E53E3E;border-radius:6px;flex-shrink:0;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h5v1.5H8V10z"/></svg>
-            </span>
-            Descargar certificado
-          </button>
-        </div>
       </div>
     </div>
 
@@ -1039,19 +1030,25 @@
 
     <div class="materials__grid">
       <div class="material-card fade-in">
-        <div class="material-card__icon">🌽</div>
-        <h3>Almidón vegetal</h3>
-        <p>Derivado de maíz, mandioca o papa. Materia prima renovable que se degrada completamente en condiciones de compostaje.</p>
+        <img class="material-card__img" src="assets/mat-almidon.webp" alt="Almidón vegetal de maíz, materia prima renovable" loading="lazy" width="800" height="500" />
+        <div class="material-card__body">
+          <h3>Almidón vegetal</h3>
+          <p>Derivado de maíz, mandioca o papa. Materia prima renovable que se degrada completamente en condiciones de compostaje.</p>
+        </div>
       </div>
       <div class="material-card fade-in">
-        <div class="material-card__icon">🧬</div>
-        <h3>Biopolímeros PLA/PBAT</h3>
-        <p>Polímeros de base biológica que garantizan resistencia operativa y compostabilidad real. Sin derivados del petróleo.</p>
+        <img class="material-card__img" src="assets/mat-biopolimeros.webp" alt="Biopolímeros PLA y PBAT verificados en laboratorio" loading="lazy" width="800" height="500" />
+        <div class="material-card__body">
+          <h3>Biopolímeros PLA/PBAT</h3>
+          <p>Polímeros de base biológica que garantizan resistencia operativa y compostabilidad real. Sin derivados del petróleo.</p>
+        </div>
       </div>
       <div class="material-card fade-in">
-        <div class="material-card__icon">🔄</div>
-        <h3>Recursos renovables</h3>
-        <p>Toda la cadena de materias primas proviene de fuentes que se regeneran. Ciclo cerrado: uso → compostaje → suelo.</p>
+        <img class="material-card__img" src="assets/mat-renovable.webp" alt="Recursos renovables y ciclo cerrado de compostaje" loading="lazy" width="800" height="500" />
+        <div class="material-card__body">
+          <h3>Recursos renovables</h3>
+          <p>Toda la cadena de materias primas proviene de fuentes que se regeneran. Ciclo cerrado: uso → compostaje → suelo.</p>
+        </div>
       </div>
     </div>
 
@@ -1128,7 +1125,7 @@
       <div class="product-card fade-in">
         <div class="product-card__img" style="background:#f5f5f5;">
           <span class="product-card__img-label">Más vendido</span>
-          <img src="assets/producto-frutas-verduras.png" alt="Bolsa compostable para frutas y verduras 30x40 — Biogreens" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+          <img src="assets/producto-frutas-verduras.webp" alt="Bolsa compostable para frutas y verduras 30x40 — Biogreens" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
         </div>
         <div class="product-card__body">
           <div class="product-card__sku">BGN-001</div>
@@ -1141,7 +1138,12 @@
             <li>Certificada EN 13432 y ASTM D6400</li>
             <li>Se composta en 90 a 180 días</li>
           </ul>
+          <div class="product-card__price"><span>Desde</span> $28.000 <small>/ rollo</small></div>
           <div class="product-card__ctas">
+            <a href="https://wa.me/542914620008?text=Hola%2C+quiero+cotizar+la+Bolsa+Frutas+y+Verduras+30x40+Biogreens" target="_blank" rel="noopener" class="btn btn-primary" style="padding:11px 18px;font-size:.85rem;">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Consultar por WhatsApp
+            </a>
             <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noopener" class="btn-ml">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               Mercado Libre
@@ -1153,7 +1155,7 @@
       <!-- Producto 2 -->
       <div class="product-card fade-in">
         <div class="product-card__img" style="background:#f5f5f5;">
-          <img src="assets/producto-camiseta.png" alt="Bolsa camiseta compostable 40x50 — Biogreens" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+          <img src="assets/producto-camiseta.webp" alt="Bolsa camiseta compostable 40x50 — Biogreens" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
         </div>
         <div class="product-card__body">
           <div class="product-card__sku">BGN-002</div>
@@ -1166,7 +1168,12 @@
             <li>Certificada EN 13432 y ASTM D6400</li>
             <li>Alternativa directa a la bolsa de polietileno</li>
           </ul>
+          <div class="product-card__price"><span>Desde</span> $28.000 <small>/ rollo</small></div>
           <div class="product-card__ctas">
+            <a href="https://wa.me/542914620008?text=Hola%2C+quiero+cotizar+la+Bolsa+Camiseta+40x50+Biogreens" target="_blank" rel="noopener" class="btn btn-primary" style="padding:11px 18px;font-size:.85rem;">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Consultar por WhatsApp
+            </a>
             <a href="https://www.mercadolibre.com.ar" target="_blank" rel="noopener" class="btn-ml">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               Mercado Libre
@@ -1182,7 +1189,7 @@
         <strong style="color:var(--green-800);">¿Compra en volumen?</strong>
         <p style="font-size:.9rem;margin-top:4px;">Para distribuidores, municipios y cadenas de supermercados ofrecemos cotizaciones mayoristas con precios especiales.</p>
       </div>
-      <a href="https://wa.me/5492915550000?text=Hola%2C+quiero+cotizar+compra+en+volumen+de+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="btn btn-dark" style="white-space:nowrap;">Pedir cotización mayorista</a>
+      <a href="https://wa.me/542914620008?text=Hola%2C+quiero+cotizar+compra+en+volumen+de+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="btn btn-dark" style="white-space:nowrap;">Pedir cotización mayorista</a>
     </div>
   </div>
 </section>
@@ -1191,28 +1198,28 @@
 <section id="proof" aria-labelledby="proof-heading">
   <div class="container">
     <div class="section-header">
-      <p class="eyebrow" style="margin-bottom:12px;">Prueba real</p>
+      <p class="eyebrow" style="margin-bottom:12px;">Uso en el comercio</p>
       <h2 id="proof-heading">Funcionan en la práctica, no solo en papel</h2>
       <div class="divider"></div>
-      <p>Estas bolsas están diseñadas para uso comercial real. Resistentes al manejo cotidiano, aptas para contacto con alimentos frescos.</p>
+      <p>Diseñadas para uso comercial real. Resistentes al manejo cotidiano y aptas para contacto con alimentos frescos.</p>
     </div>
     <div class="proof__grid">
       <div class="proof-card fade-in">
-        <div class="proof-card__img" aria-hidden="true">🥬</div>
+        <img class="proof-card__img" src="assets/uso-verduleria.webp" alt="Bolsas compostables con frutas y verduras frescas" loading="lazy" width="800" height="600" />
         <div class="proof-card__body">
-          <h3>Uso en verdulería</h3>
-          <p>La bolsa 30×40 aguanta frutas y verduras de hasta 1,5kg sin rasgarse. Ideal para mostrador y autoservicio.</p>
+          <h3>Verdulerías y fruterías</h3>
+          <p>La bolsa 30×40 aguanta frutas y verduras de hasta 1,5 kg sin rasgarse. Ideal para mostrador y autoservicio.</p>
         </div>
       </div>
       <div class="proof-card fade-in">
-        <div class="proof-card__img" aria-hidden="true">🏪</div>
+        <img class="proof-card__img" src="assets/uso-retail.webp" alt="Uso en retail, dietéticas y supermercados" loading="lazy" width="800" height="600" />
         <div class="proof-card__body">
           <h3>Retail y dietéticas</h3>
-          <p>La bolsa camiseta reemplaza directamente a la bolsa de polietileno en cajas de supermercado y mostrador.</p>
+          <p>La bolsa camiseta reemplaza directamente a la de polietileno en cajas de supermercado, dietéticas y mostrador.</p>
         </div>
       </div>
       <div class="proof-card fade-in">
-        <div class="proof-card__img" aria-hidden="true">🍽️</div>
+        <img class="proof-card__img" src="assets/uso-gastronomia.webp" alt="Packaging compostable para gastronomía, takeaway y delivery" loading="lazy" width="800" height="600" />
         <div class="proof-card__body">
           <h3>Gastronomía</h3>
           <p>Para packaging takeaway y delivery. Cumple normativas municipales de restricción de plásticos de un solo uso.</p>
@@ -1226,7 +1233,7 @@
         <h3 style="margin-bottom:12px;">Pedí una muestra antes de decidir</h3>
         <p style="font-size:.9rem;">Si tenés dudas sobre la resistencia o el comportamiento del material en tu negocio, podés solicitar una muestra para evaluarla. Sin compromiso.</p>
       </div>
-      <a href="https://wa.me/5492915550000?text=Hola%2C+quiero+solicitar+una+muestra+de+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="btn btn-dark">Solicitar muestra →</a>
+      <a href="https://wa.me/542914620008?text=Hola%2C+quiero+solicitar+una+muestra+de+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="btn btn-dark">Solicitar muestra →</a>
     </div>
   </div>
 </section>
@@ -1337,13 +1344,13 @@
         <p style="color:rgba(255,255,255,.65);margin-top:0;font-size:1rem;">Respondemos en menos de 24 horas. Para cotizaciones, muestras o consultas técnicas, escribinos directamente.</p>
 
         <div class="contact__ctas">
-          <a href="https://wa.me/5492915550000?text=Hola%2C+quiero+informaci%C3%B3n+sobre+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="contact__cta-item">
+          <a href="https://wa.me/542914620008?text=Hola%2C+quiero+informaci%C3%B3n+sobre+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="contact__cta-item">
             <div class="contact__cta-icon contact__cta-icon--wha">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
             </div>
             <div class="contact__cta-text">
               <div class="contact__cta-label">WhatsApp</div>
-              <div class="contact__cta-value">+54 9 291 555-0000</div>
+              <div class="contact__cta-value">+54 291 462-0008</div>
             </div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
@@ -1413,7 +1420,7 @@
     <div class="footer__grid">
       <div>
         <div class="footer__brand-logo" style="margin-bottom:14px;">
-          <img src="assets/logo.png" alt="Biogreens" style="height:44px;width:auto;filter:brightness(0) invert(1);" />
+          <img src="assets/logo.webp" alt="Biogreens" style="height:48px;width:auto;filter:brightness(0) invert(1);" />
         </div>
         <p class="footer__tagline">Transición simple hacia menos plástico en tu negocio. Bolsas compostables certificadas, importadas y comercializadas desde Bahía Blanca, Argentina.</p>
         <div class="footer__certs">
@@ -1445,7 +1452,7 @@
       <div class="footer__col">
         <h4>Contacto</h4>
         <ul class="footer__links">
-          <li><a href="https://wa.me/5492915550000" target="_blank" rel="noopener">+54 9 291 555-0000</a></li>
+          <li><a href="https://wa.me/542914620008" target="_blank" rel="noopener">+54 291 462-0008</a></li>
           <li><a href="mailto:contacto@biogreens.com.ar">contacto@biogreens.com.ar</a></li>
           <li><a href="#">@biogreensarg</a></li>
           <li style="color:rgba(255,255,255,.35);font-size:.8rem;cursor:default;">Bahía Blanca, Buenos Aires</li>
@@ -1461,7 +1468,7 @@
 </footer>
 
 <!-- ========== WHATSAPP FLOATING BTN ========== -->
-<a href="https://wa.me/5492915550000?text=Hola%2C+quiero+informaci%C3%B3n+sobre+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="wha-float" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/542914620008?text=Hola%2C+quiero+informaci%C3%B3n+sobre+bolsas+compostables+Biogreens" target="_blank" rel="noopener" class="wha-float" aria-label="Contactar por WhatsApp">
   <span class="wha-float-pulse" aria-hidden="true"></span>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 </a>
@@ -1477,30 +1484,20 @@
     navbar.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // Counter animation
-  function animateCount(el, target, suffix, duration) {
-    const start = performance.now();
-    const step = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * target);
-      el.textContent = current + (suffix || '');
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+  // Hamburger / mobile menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu() {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
   }
-
-  let countersStarted = false;
-  const countersObs = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !countersStarted) {
-      countersStarted = true;
-      animateCount(document.getElementById('counter-bags'), 125, '', 2000);
-      animateCount(document.getElementById('counter-clients'), 47, '', 1800);
-    }
-  }, { threshold: 0.3 });
-  const impactSection = document.getElementById('impact');
-  if (impactSection) countersObs.observe(impactSection);
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
   // FAQ accordion
   document.querySelectorAll('.faq-btn').forEach(btn => {
@@ -1553,15 +1550,9 @@
     if (product) text += `\nProducto: ${product}`;
     if (message) text += `\nConsulta: ${message}`;
 
-    const url = 'https://wa.me/5492915550000?text=' + encodeURIComponent(text);
+    const url = 'https://wa.me/542914620008?text=' + encodeURIComponent(text);
     window.open(url, '_blank', 'noopener,noreferrer');
   });
-
-  // Google Fonts — Inter
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap';
-  document.head.appendChild(link);
 })();
 </script>
 
