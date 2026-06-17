@@ -209,14 +209,20 @@
     .navbar.scrolled .navbar__inner { height: 62px; }
     .navbar__logo {
       display: flex; align-items: center;
-      transition: opacity var(--transition);
+      transition: opacity var(--transition), filter var(--transition);
+      filter: drop-shadow(0 2px 6px rgba(15,26,20,.06));
     }
     .navbar__logo img {
       height: 54px; width: auto; display: block;
-      transition: height var(--transition);
+      transition: height var(--transition), filter var(--transition);
+      filter: saturate(1.05);
     }
     .navbar.scrolled .navbar__logo img { height: 46px; }
-    .navbar__logo:hover { opacity: .82; }
+    .navbar__logo:hover {
+      opacity: .9;
+      filter: drop-shadow(0 2px 8px rgba(15,26,20,.12));
+    }
+    .navbar__logo:hover img { filter: saturate(1.15); }
     /* Hamburger */
     .navbar__burger {
       display: none;
@@ -762,15 +768,28 @@
     }
     .footer__brand-logo {
       display: inline-block;
-      background: #fff;
-      padding: 14px 22px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+      background: linear-gradient(135deg, #FFFFFF 0%, #F8F9F8 100%);
+      padding: 16px 26px;
+      border-radius: 16px;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.6) inset,
+        0 8px 32px rgba(0,0,0,.16),
+        0 1px 2px rgba(0,0,0,.08);
+      border: 1px solid rgba(255,255,255,.4);
       margin-bottom: 28px !important;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .footer__brand-logo:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.6) inset,
+        0 12px 40px rgba(0,0,0,.18),
+        0 1px 2px rgba(0,0,0,.08);
     }
     .footer__brand-logo img {
       height: 56px !important; width: auto !important;
       opacity: 1 !important; display: block;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,.04));
     }
     .footer__brand-name {
       font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em;
