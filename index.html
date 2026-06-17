@@ -80,28 +80,29 @@
   <style>
     /* ===================== CSS VARIABLES ===================== */
     :root {
-      /* Premium industrial color palette (Lumicup inspired) */
-      --green-900: #0F2817;
-      --green-800: #1A3C2E;
-      --green-700: #1D4935;
-      --green-600: #2A5F47;
-      --green-500: #3D7C57;
-      --green-400: #4A9768;
-      --green-300: #6DB896;
-      --green-200: #99D0B6;
-      --green-100: #D4E8DE;
-      --green-50:  #EEFDFA;
-      --green-hero: #F5FEFB;
+      /* Premium industrial color palette (Lumicup inspired) — desaturated greens + warm grays */
+      --green-900: #12241A;
+      --green-800: #1B3528;
+      --green-700: #244234;
+      --green-600: #305043;
+      --green-500: #436B57;
+      --green-400: #5A8470;
+      --green-300: #86A89A;
+      --green-200: #B3C8BF;
+      --green-100: #DCE6E1;
+      --green-50:  #F1F5F3;
+      --green-hero: #F6F8F6;
       --header-bg: #FFFFFF;
       --white:     #FFFFFF;
-      --gray-900:  #0D1117;
-      --gray-800:  #1C1F26;
-      --gray-700:  #36404A;
-      --gray-600:  #525A64;
-      --gray-500:  #6B7280;
-      --gray-300:  #D9E0DC;
-      --gray-100:  #F1F3F5;
-      --gray-50:   #F8F9FA;
+      --gray-900:  #14181C;
+      --gray-800:  #232830;
+      --gray-700:  #3C434B;
+      --gray-600:  #565E66;
+      --gray-500:  #717A82;
+      --gray-300:  #DADEDC;
+      --gray-200:  #E7EBE9;
+      --gray-100:  #F2F4F3;
+      --gray-50:   #F8FAF9;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --font-head: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --radius:    10px;
@@ -188,24 +189,34 @@
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 0 24px;
-      background: var(--header-bg);
-      border-bottom: 1px solid rgba(15,26,20,.06);
-      transition: box-shadow var(--transition);
+      background: rgba(255,255,255,.72);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      backdrop-filter: saturate(180%) blur(16px);
+      border-bottom: 1px solid rgba(15,26,20,.05);
+      transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
     .navbar.scrolled {
-      box-shadow: 0 4px 20px rgba(15,26,20,.06);
+      background: rgba(255,255,255,.85);
+      box-shadow: 0 1px 0 rgba(15,26,20,.04), 0 8px 30px rgba(15,26,20,.06);
+      border-bottom-color: transparent;
     }
     .navbar__inner {
       max-width: 1180px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      height: 82px;
+      height: 72px;
+      transition: height var(--transition);
     }
+    .navbar.scrolled .navbar__inner { height: 62px; }
     .navbar__logo {
       display: flex; align-items: center;
       transition: opacity var(--transition);
     }
-    .navbar__logo img { height: 240px; width: auto; display: block; }
-    .navbar__logo:hover { opacity: .85; }
+    .navbar__logo img {
+      height: 54px; width: auto; display: block;
+      transition: height var(--transition);
+    }
+    .navbar.scrolled .navbar__logo img { height: 46px; }
+    .navbar__logo:hover { opacity: .82; }
     /* Hamburger */
     .navbar__burger {
       display: none;
@@ -224,8 +235,9 @@
     .navbar__burger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
     /* Mobile menu panel */
     .mobile-menu {
-      position: fixed; inset: 82px 0 auto 0; z-index: 99;
-      background: var(--white);
+      position: fixed; inset: 72px 0 auto 0; z-index: 99;
+      background: rgba(255,255,255,.96);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(15,26,20,.08);
       box-shadow: 0 12px 28px rgba(15,26,20,.1);
       transform: translateY(-12px); opacity: 0; pointer-events: none;
@@ -263,8 +275,8 @@
     #hero {
       min-height: 92vh;
       background:
-        radial-gradient(ellipse 65% 45% at 50% -5%, rgba(61,124,87,.08) 0%, transparent 55%),
-        linear-gradient(135deg, #F9FFFC 0%, #FFFFFF 100%);
+        radial-gradient(ellipse 60% 45% at 50% -8%, rgba(67,107,87,.10) 0%, transparent 58%),
+        linear-gradient(170deg, #F4F7F5 0%, #FFFFFF 60%);
       display: flex; align-items: center;
       padding-top: 122px; padding-bottom: 72px;
       position: relative; overflow: hidden;
@@ -370,7 +382,7 @@
     }
 
     /* ===================== CERTIFICATIONS ===================== */
-    #certs { background: #FAFBFC; }
+    #certs { background: linear-gradient(180deg, #FFFFFF 0%, #F6F8F7 100%); }
     .cert-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -515,7 +527,7 @@
     }
 
     /* ===================== PRODUCTS ===================== */
-    #products { background: #FAFBFC; }
+    #products { background: linear-gradient(180deg, #F6F8F7 0%, #FFFFFF 100%); }
     .products__grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -736,8 +748,8 @@
 
     /* ===================== FOOTER ===================== */
     footer {
-      background: linear-gradient(135deg, #0F2817 0%, #1A3C2E 100%);
-      color: rgba(255,255,255,.65);
+      background: linear-gradient(160deg, #16291E 0%, #12241A 100%);
+      color: rgba(255,255,255,.62);
       padding: 80px 0 40px;
     }
     .footer__grid {
@@ -747,6 +759,18 @@
       padding-bottom: 48px;
       border-bottom: 1px solid rgba(255,255,255,.08);
       margin-bottom: 32px;
+    }
+    .footer__brand-logo {
+      display: inline-block;
+      background: #fff;
+      padding: 14px 22px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+      margin-bottom: 28px !important;
+    }
+    .footer__brand-logo img {
+      height: 56px !important; width: auto !important;
+      opacity: 1 !important; display: block;
     }
     .footer__brand-name {
       font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em;
